@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Jerry Store</string>
+    <string name="high_tension">High tension</string>
+    <string name="money_icon">Money Icon</string>
+    <string name="ruler_icon">Ruler Icon</string>
+    <string name="temperature">Temperature</string>
+    <string name="time">Time</string>
+    <string name="no_of_deaths">No. of deaths</string>
+    <string name="sport_tom">Sport Tom</string>
+    <string name="he_runs_1_meter_trips_over_his_boot">He runs 1 meter... trips over his boot.</string>
+    <string name="cart">Cart</string>
+    <string name="shocking_foods">Shocking foods</string>
+    <string name="pasta">Pasta</string>
+    <string name="preparation_method">Preparation method</string>
+    <string name="details">Details</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="electric_tom_pasta">Electric Tom pasta</string>
+    <string name="favourite">Favourite Heart</string>
+    <string name="description_meal">Pasta cooked with a charger cable and sprinkled with questionable cheese. Make sure to unplug it before eating (or not, you decide).</string>
+    <string name="kitchen_background">Kitchen Background</string>
+</resources>

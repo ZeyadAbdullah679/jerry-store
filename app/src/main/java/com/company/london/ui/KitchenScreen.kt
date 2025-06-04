@@ -167,9 +167,7 @@ fun KitchenDetails() {
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true,
-    device = "spec:width=1280dp,height=800dp,dpi=240"
-)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun KitchenScreenPreview() {
     KitchenScreen(Modifier)

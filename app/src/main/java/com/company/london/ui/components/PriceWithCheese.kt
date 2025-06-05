@@ -3,8 +3,10 @@ package com.company.london.ui.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -37,7 +39,7 @@ fun PriceWithCheese(
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp),
+        horizontalArrangement = Arrangement.Center,
         modifier = modifier
             .height(30.dp)
             .clip(RoundedCornerShape(8.dp))
@@ -49,6 +51,9 @@ fun PriceWithCheese(
             contentDescription = stringResource(R.string.money_icon),
             tint = Color.Unspecified
         )
+
+        Spacer(modifier = Modifier.width(4.dp))
+
         Text(
             text = buildAnnotatedString {
                 if (oldPrice != null) {
@@ -63,7 +68,8 @@ fun PriceWithCheese(
                 color = DarkBlue,
                 fontWeight = FontWeight.Medium,
                 textAlign = TextAlign.Center
-            )
+            ),
+            modifier = Modifier
         )
     }
 }

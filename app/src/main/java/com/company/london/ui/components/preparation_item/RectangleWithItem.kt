@@ -13,12 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.company.london.ui.theme.DarkGray
+import com.company.london.R
 
 @Composable
 fun RectangleWithItem(
@@ -37,9 +39,10 @@ fun RectangleWithItem(
         Text(
             text = item,
             style = MaterialTheme.typography.bodyLarge.copy(
+                fontFamily = FontFamily(Font(R.font.ibm_plex_sans_arabic_regular)),
                 fontSize = 14.sp,
                 lineHeight = 16.sp,
-                fontWeight = FontWeight(400),
+                fontWeight = FontWeight(500),
                 color = Color(0x99121212),
                 textAlign = TextAlign.Center,
                 letterSpacing = 0.5.sp,

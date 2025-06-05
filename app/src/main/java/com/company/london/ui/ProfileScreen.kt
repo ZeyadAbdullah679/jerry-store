@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,16 +31,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.company.london.R
+import com.company.london.ui.components.TomAccountItem
+import com.company.london.ui.components.TomStatsCard
 import com.company.london.ui.model.TomAccountOption
 import com.company.london.ui.model.TomStatCardModel
 import com.company.london.ui.theme.White90
-import com.company.london.ui.components.TomAccountItem
-import com.company.london.ui.components.TomStatsCard
 
 @Composable
-fun ProfileScreen() {
+fun ProfileScreen(modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
         Box(
             modifier = Modifier.fillMaxWidth(),
@@ -49,7 +50,7 @@ fun ProfileScreen() {
     }
     Box(
         modifier = Modifier
-            .padding(top = 180.dp)
+            .padding(top = 208.dp)
             .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 20.dp))
             .fillMaxSize()
             .background(com.company.london.ui.theme.AccountBackground)
@@ -194,7 +195,7 @@ fun AccountBackground() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 16.dp)
+            .statusBarsPadding()
     ) {
         Image(
             painter = painterResource(id = R.drawable.tom_donkey),
@@ -227,24 +228,21 @@ fun AccountBackground() {
             color = White90
         )
 
-        Box(
+        Text(
+            text = "Edit foolishness",
+            fontSize = 10.sp,
+            fontWeight = FontWeight(500),
+            color = White,
+            textAlign = TextAlign.Center,
+            lineHeight = (10 * 1.3).sp,
             modifier = Modifier
                 .background(
                     Color(0xFF4B87A2).copy(alpha = 0.4f), shape = RoundedCornerShape(50)
                 )
                 .padding(horizontal = 12.dp, vertical = 6.dp)
-        ) {
-            Text(
-                text = "Edit foolishness",
-                fontSize = 10.sp,
-                fontWeight = FontWeight(500),
-                color = White,
-                textAlign = TextAlign.Center,
-                lineHeight = (10 * 1.3).sp
-            )
-        }
-        Spacer(modifier = Modifier.height(8.dp))
+        )
     }
+    Spacer(modifier = Modifier.height(8.dp))
 }
 
 

@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -24,6 +25,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -84,8 +87,8 @@ fun KitchenScreen(modifier: Modifier = Modifier) {
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter)
                 .background(Color(0xFFEEF4F6))
-                .padding(bottom = 8.dp)
-                .padding(16.dp),
+                .navigationBarsPadding()
+                .padding(start = 16.dp, end = 16.dp, top = 16.dp, bottom = 0.dp),
             price = 5,
             oldPrice = 10
         )
@@ -116,6 +119,7 @@ fun KitchenDetails() {
                 Text(
                     text = stringResource(R.string.electric_tom_pasta),
                     style = MaterialTheme.typography.titleLarge.copy(
+                        fontFamily = FontFamily(Font(R.font.ibm_plex_sans_arabic_semi_bold)),
                         fontSize = 20.sp,
                         lineHeight = 16.sp,
                         fontWeight = FontWeight(500),
@@ -140,6 +144,7 @@ fun KitchenDetails() {
         Text(
             text = stringResource(R.string.description_meal),
             style = MaterialTheme.typography.bodyLarge.copy(
+                fontFamily = FontFamily(Font(R.font.ibm_plex_sans_arabic_medium)),
                 fontSize = 14.sp,
                 lineHeight = 20.sp,
                 fontWeight = FontWeight(500),

@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -18,6 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
@@ -34,7 +37,7 @@ fun CartButton(
 ) {
     Button(
         onClick = {},
-        modifier = modifier,
+        modifier = modifier.height(56.dp),
         shape = RoundedCornerShape(16.dp),
         colors = ButtonDefaults.buttonColors().copy(
             containerColor = Color(0xFF226993)
@@ -48,6 +51,7 @@ fun CartButton(
             Text(
                 text = stringResource(R.string.add_to_cart),
                 style = MaterialTheme.typography.bodyLarge.copy(
+                    fontFamily = FontFamily(Font(R.font.ibm_plex_sans_arabic_medium)),
                     fontSize = 16.sp,
                     lineHeight = 16.sp,
                     fontWeight = FontWeight(500),
@@ -70,10 +74,11 @@ fun CartButton(
                 Text(
                     text = "$price cheeses",
                     style = MaterialTheme.typography.bodyLarge.copy(
+                        fontFamily = FontFamily(Font(R.font.ibm_plex_sans_arabic_medium)),
                         fontSize = 14.sp,
                         lineHeight = 16.sp,
-                        fontWeight = FontWeight(400),
-                        color = Color(0xDEFFFFFF),
+                        fontWeight = FontWeight(500),
+                        color = Color(0xFFFFFFFF),
                         textAlign = TextAlign.Center,
                     )
                 )
@@ -82,11 +87,12 @@ fun CartButton(
                     Text(
                         text = "$oldPrice cheeses",
                         style = MaterialTheme.typography.bodyLarge.copy(
+                            fontFamily = FontFamily(Font(R.font.ibm_plex_sans_arabic_medium)),
                             fontSize = 12.sp,
                             lineHeight = 16.sp,
-                            fontWeight = FontWeight(400),
+                            fontWeight = FontWeight(500),
                             textDecoration = TextDecoration.LineThrough,
-                            color = Color(0x61FFFFFF),
+                            color = Color(0xCCFFFFFF),
                             textAlign = TextAlign.Center,
                         )
                     )

@@ -17,51 +17,58 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.company.london.R
 
 @Composable
-fun StoreHeader (
+fun StoreHeader(
     title: String,
-){
+) {
     Row(
-        modifier = Modifier.fillMaxWidth()
-            .padding(top = 24.dp)
+        modifier = Modifier
+            .fillMaxWidth()
             .height(30.dp),
         horizontalArrangement = Arrangement.SpaceBetween
-    ){
-       Text(
-           modifier = Modifier.width(173.dp)
-               .fillMaxHeight(),
-           text = title,
-           fontSize = 20.sp,
-           fontWeight = FontWeight(600),
-           color= Color(0xFF1F1F1E)
-       )
+    ) {
+        Text(
+            modifier = Modifier
+                .width(173.dp)
+                .fillMaxHeight(),
+            text = title,
+            fontSize = 20.sp,
+            fontWeight = FontWeight(600),
+            color = Color(0xFF1F1F1E)
+        )
         Row(
-           modifier = Modifier.padding(top = 6.dp,bottom = 6.dp)
-               .width(60.dp)
-               .fillMaxHeight(),
+            modifier = Modifier
+                .padding(top = 6.dp, bottom = 6.dp)
+                .width(60.dp)
+                .fillMaxHeight(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
-
-
-           ) {
+        ) {
             Text(
-                text = "view all",
+                text = "View all",
                 fontSize = 12.sp,
                 fontWeight = FontWeight(500),
                 color = Color(0xFF03578A)
             )
-            Spacer(modifier = Modifier.width(1.dp))
+
+            Spacer(modifier = Modifier.width(4.dp))
+
             Image(
                 painter = painterResource(id = R.drawable.arrow_right),
                 modifier = Modifier.size(12.dp),
-                contentDescription = null,
-
-                )
+                contentDescription = null
+            )
         }
-
     }
+}
+
+@Preview
+@Composable
+private fun StoreHeaderPreview() {
+    StoreHeader("Cheap tom Section")
 }

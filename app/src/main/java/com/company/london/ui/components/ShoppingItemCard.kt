@@ -1,7 +1,6 @@
 package com.company.london.ui.components
 
 import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -37,8 +36,8 @@ import com.company.london.ui.theme.LightGray
 @Composable
 fun ShoppingItemCard(
     price: Int,
-    @StringRes title: Int,
-    @StringRes description: Int,
+    title: String,
+    description: String,
     @DrawableRes icon: Int,
     modifier: Modifier = Modifier,
     oldPrice: Int? = null
@@ -52,15 +51,14 @@ fun ShoppingItemCard(
             verticalArrangement = Arrangement.Bottom,
             modifier = Modifier
                 .height(220.dp)
-                .width(160.dp)
-                .padding(top = 20.dp)
+                .padding(top = 15.dp)
                 .clip(RoundedCornerShape(12.dp))
                 .background(Color.White)
                 .padding(top = 90.dp, bottom = 8.dp, start = 8.dp, end = 8.dp)
         ) {
 
             Text(
-                text = stringResource(title),
+                text = title,
                 style = MaterialTheme.typography.bodyLarge.copy(
                     fontSize = 18.sp,
                     lineHeight = 16.sp,
@@ -71,7 +69,7 @@ fun ShoppingItemCard(
             )
 
             Text(
-                text = stringResource(description),
+                text = description,
                 style = MaterialTheme.typography.labelSmall.copy(
                     fontSize = 12.sp,
                     lineHeight = 16.sp,
@@ -90,7 +88,7 @@ fun ShoppingItemCard(
                 PriceWithCheese(
                     price = price,
                     oldPrice = oldPrice,
-                    modifier = Modifier
+                    modifier = Modifier.weight(1f)
                 )
 
                 Spacer(modifier = Modifier.width(4.dp))
@@ -105,7 +103,7 @@ fun ShoppingItemCard(
         }
         Image(
             painter = painterResource(icon),
-            contentDescription = stringResource(title),
+            contentDescription = title,
             modifier = Modifier
                 .size(100.dp)
         )
@@ -117,8 +115,8 @@ fun ShoppingItemCard(
 @Composable
 private fun ShoppingItemCardPreview() {
     ShoppingItemCard(
-        title = R.string.sport_tom,
-        description = R.string.he_runs_1_meter_trips_over_his_boot,
+        title = "Tom Sport",
+        description = "He runs 1 meter... trips over his boot.",
         icon = R.drawable.tom_eating,
         price = 5,
         oldPrice = 10,

@@ -26,11 +26,11 @@ fun StoreScreen() {
         modifier = Modifier
             .fillMaxSize()
             .background(Background)
-            .padding(horizontal = 16.dp, vertical = 42.dp),
+            .padding(start = 16.dp, end = 16.dp, top = 42.dp),
 
         topBar = {
             TopBar(
-                profileImage = R.drawable.tom_donkey,
+                profileImage = R.drawable.profile_jerry,
                 title = stringResource(R.string.hi_jerry),
                 subtitle = stringResource(R.string.which_tom_do_you_want_to_buy)
             )
@@ -45,7 +45,7 @@ fun StoreScreen() {
 private fun StoreScreenContent(padding: PaddingValues) {
     Column(
         modifier = Modifier
-            .padding(top = padding.calculateTopPadding())
+            .padding(padding)
             .background(Background)
     ) {
         StoreSearchBar()

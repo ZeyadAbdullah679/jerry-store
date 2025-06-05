@@ -39,14 +39,10 @@ import com.company.london.ui.theme.White90
 
 @Composable
 fun ProfileScreen(modifier: Modifier = Modifier) {
-    Column(
-        modifier = modifier.fillMaxSize()
+    Box(
+        modifier = modifier.fillMaxWidth()
     ) {
-        Box(
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            AccountBackground()
-        }
+        AccountBackground()
     }
     Box(
         modifier = Modifier
@@ -183,6 +179,7 @@ fun AccountScreenContent(
 
 @Composable
 fun AccountBackground() {
+    Spacer(modifier = Modifier.height(20.dp))
     Image(
         painter = painterResource(id = R.drawable.background_container),
         contentDescription = null,
